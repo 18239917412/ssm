@@ -1,0 +1,41 @@
+参数绑定
+	默认支持的参数类型
+		处理器中的形参添加以下 的类型，参数处理适配器默认识别并进行赋值。
+		
+		HttpServletRequest
+		
+		HttpServletResponse
+		
+		HttpSession
+		
+		
+	Model/ModelMap
+		一般使用ModelAndView，处理器向页面传递数据
+		
+		Model(接口，真正用的实现类ModelMap)也可以传递数据,ModelMap
+		
+		
+	绑定简单类型
+		当请求参数名称与处理器形参的名称一致的时候，可以直接将请求参数与形参进行绑定。
+		
+		整数：Integer，int
+		字符串：String
+		浮点：folat，double，Folat  Double
+		布尔类型：boolean  Boolean
+		
+	推荐使用包装类类型,因为基本数据类型不能赋值为null
+	
+	@RequestParam
+		用于简单类型的参数绑定
+		
+		value：请求中的参数名
+		required：是否必须，意思就是请求中是否必须包含该参数，否则报错
+		defaultValue：请求中没有该参数取的默认值。
+		
+	绑定pojo类型
+		实体类中的属性名与form表单中的name属性名保持一致。
+		
+		
+	解决中文乱码
+		
+	

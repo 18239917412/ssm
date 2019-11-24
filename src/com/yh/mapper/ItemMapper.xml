@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yh.mapper.ItemMapper">
+	<select id="findItem" resultType="item">
+		select * from items
+	</select>
+	<select id="findItemById" parameterType="int" resultType="item">
+		select * from items where id = #{id}
+	</select>
+	<insert id="insert" parameterType="item">
+		insert into items (name,price,createtime,detail) values(#{name},#{price},now(),#{detail})
+	</insert>
+	<update id="update" parameterType="item">
+		update items set name=#{name},price=#{price},createtime=#{createtime},detail=#{detail} where id=#{id}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete from items where id=#{id}
+	</delete>
+</mapper>
